@@ -329,7 +329,7 @@ def main_worker(gpu, ngpus_per_node, args):
     )
     if args.lars:
         print("=> use LARS optimizer.")
-        from apex.parallel.LARC import LARC
+        from simsiam.optimizer import LARC
 
         optimizer = LARC(optimizer=optimizer, trust_coefficient=0.001, clip=False)
 
